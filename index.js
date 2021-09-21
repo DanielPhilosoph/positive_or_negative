@@ -8,14 +8,13 @@ const FLOAT_TO_PRECENT = 100;
 //======================================
 // ============ Main Run ===============
 //======================================
+
 document.addEventListener("click", onClickHandel);
 let resultP = document.querySelector("#resultP");
 let loaderElement = document.querySelector("#loader");
 let catStatus = document.querySelector("#http-status");
 let progressbar = document.querySelector("#progressbar");
 let root = document.querySelector(':root');
-
-
 
 //========================================
 //=============== functions ==============
@@ -75,17 +74,17 @@ async function analyzeText(text) {
 }
 
 // ===> handles a click on screen <===
-async function onClickHandel(event){
-    let textToAnalyze = document.querySelector("#userText").value;
-    let progressbar = document.querySelector("#progressbar");
+async function onClickHandel(event){    
     if(event.target.id === "clearButton"){
         clear()
     }
     if(event.target.id === "submitButton")
-    {                        
+    {      
+        let textToAnalyze = document.querySelector("#userText").value;                      
         let analyzedObject = await analyzeText(textToAnalyze);
         if(analyzedObject.error === ""){            
             resultP.style.color = textColorByType(analyzedObject.type);
+            // Returns to page:
             resultP.innerText = `The text type is: ${analyzedObject.type} \n
             And the polarity is equal to ${analyzedObject.polarity} \n
             Time to fetch: ${analyzedObject.timeToLoadSec} seconds`;

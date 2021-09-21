@@ -1,11 +1,19 @@
+/* === Vars to work with === */
+/* ========================= */
 :root{
     --long: 100%;
     --color: gray;
 }
+
+/* ===== body ===== */
 body {
 	margin-left: 0;
     margin-right: 0;    
 }
+
+/* ======================= */
+/* Loader css + animation */
+/* ======================= */
 .lds-dual-ring {
     display: inline-block;
     width: 50px;
@@ -37,9 +45,11 @@ body {
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     width: 100%;
-    
-
-
+}
+ 
+/* ======================== */
+/* === Other css styling ===*/
+/* ======================== */
 .button{
     border-radius: 10%;
     background-color: violet;
@@ -70,6 +80,9 @@ body {
     color: cadetblue;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+/* ==================== */
+/* Progress bar styling */
+/* ==================== */
 #progressbar {
     background-color:black;
     width: 20%;
