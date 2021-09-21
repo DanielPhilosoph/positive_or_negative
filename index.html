@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Sentimentor</title>
+        <link rel="shortcut icon" type="image/x-icon" href="./Image/goodBad.jpg" />
+        <link rel="stylesheet" href="./style.css">
+        <script src="./index.js" defer></script> 
+    </head>
+    <body style="background-color:bisque">    
+        <div class="main-div">
+            <p class="center">Insert text for checking</p>
+        </div>
+        <div class="center">
+            <textarea id="userText" class="textbox"></textarea>
+        </div>
+        <br>
+        <div class="center">
+            <button type="button" id="submitButton" class="button">Submit</button>
+            <button type="button" id="clearButton" class="button">Clear</button>
+        </div>
+        <div class="center">
+            <p id="resultP"><div class="lds-dual-ring center-loader" style="display: none;" id="loader"></div></p> 
+            <div id="progressbar" style="display: none;">
+                <div></div>
+            </div>     
+        </div>
+        <div class="center">
+            <p class="status-cat-text">Get a status cat</p>
+            <img id="http-status" class="cat-status center" style="display: none;">
+        </div>
+    </body>  
+     
+</html>
