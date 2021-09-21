@@ -102,3 +102,52 @@ async function onClickHandel(event){
     }
     
 }
+
+// ===> {polaraty - int} Calculate the % of prograss bar and display <===
+function progressbarLength(polarity){
+    if(polarity === 0){
+        root.style.setProperty('--long', polarity + '%');
+        root.style.setProperty('--color', 'gray');
+    }
+    else if(polarity < 0){
+        root.style.setProperty('--long', (-polarity) * FLOAT_TO_PRECENT + '%');
+        root.style.setProperty('--color', 'red');
+    }
+    else{
+        root.style.setProperty('--long', polarity * FLOAT_TO_PRECENT + '%');
+        root.style.setProperty('--color', 'lightgreen');
+    }
+}
+
+// ===> Clear screan <===
+function clear(){  
+    resultP.innerText = "";
+    document.querySelector("#userText").value = "";
+    catStatus.style.display = 'none'; 
+    progressbar.style.display = "none";
+    catStatus.src = "";   
+}
+
+// ===> Gets status - int - display cat photo <===
+async function statusCatPhoto(status){    
+    let link = 'https://http.cat/'+status;
+    catStatus.src = link;
+    catStatus.style.display = "block";
+}
+
+// ===> Gets type - str - return text color <===
+function textColorByType(type){
+    if(type === "neutral"){
+        return "gray";
+    }
+    else if(type === "negative"){
+        return "red";
+    }
+    else if(type === "positive"){
+        return "green";
+    }
+    else{
+        return "black"
+    }
+}
+
