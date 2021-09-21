@@ -1,0 +1,88 @@
+:root{
+    --long: 100%;
+    --color: gray;
+}
+body {
+	margin-left: 0;
+    margin-right: 0;    
+}
+.lds-dual-ring {
+    display: inline-block;
+    width: 50px;
+    height: 50px;        
+  }
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color:blueviolet transparent blueviolet transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.main-div{
+    text-align: center;
+    font-size: 38px;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 100%;
+    
+
+
+.button{
+    border-radius: 10%;
+    background-color: violet;
+    color: white;
+    display: inline-block;
+    padding: 10px 10px;
+}
+.button:hover{
+    background-color:rebeccapurple;
+}
+.textbox{
+    width: 180px;
+    height: 240px;    
+}
+.center{
+    text-align: center;
+}
+.center-loader{
+    margin: auto;
+}
+.cat-status{
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
+.status-cat-text{
+    font-size: 18px;
+    color: cadetblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#progressbar {
+    background-color:black;
+    width: 20%;
+    margin: auto;
+    border-radius: 5px;
+    /* (height of inner div) / 2 + padding */
+    padding: 3px;
+  }
+  
+  #progressbar>div {
+    background-color: var(--color);
+    width: var(--long);
+    /* Adjust with JavaScript */
+    height: 10px;
+    border-radius: 2px;
+  }
