@@ -13,7 +13,7 @@ let resultP = document.querySelector("#resultP");
 let loaderElement = document.querySelector("#loader");
 let catStatus = document.querySelector("#http-status");
 let progressbar = document.querySelector("#progressbar");
-
+let root = document.querySelector(':root');
 
 
 
@@ -72,4 +72,33 @@ async function analyzeText(text) {
     resultObject["error"] = "";
     
     return resultObject;
+}
+
+// ===> handles a click on screen <===
+async function onClickHandel(event){
+    let textToAnalyze = document.querySelector("#userText").value;
+    let progressbar = document.querySelector("#progressbar");
+    if(event.target.id === "clearButton"){
+        clear()
+    }
+    if(event.target.id === "submitButton")
+    {                        
+        let analyzedObject = await analyzeText(textToAnalyze);
+        if(analyzedObject.error === ""){            
+            resultP.style.color = textColorByType(analyzedObject.type);
+            resultP.innerText = `The text type is: ${analyzedObject.type} \n
+            And the polarity is equal to ${analyzedObject.polarity} \n
+            Time to fetch: ${analyzedObject.timeToLoadSec} seconds`;
+            progressbar.style.display = "block";
+            progressbarLength(analyzedObject.polarity)            
+        }
+        else{
+            // Error             
+            resultP.style.color = "black";          
+            resultP.innerText = analyzedObject.error;
+            progressbar.style.display = "none";
+        }
+        
+    }
+    
 }
